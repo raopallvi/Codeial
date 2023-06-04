@@ -1,0 +1,4 @@
+# node_modules folder will contain all the install modules and lib due to which folder is heavy
+# to avoid this thing we use .gitignore  to ignore node_modules
+
+node_modules/

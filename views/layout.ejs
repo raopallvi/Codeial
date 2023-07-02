@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeial</title>
+    <!-- Css for layout -->
+    <link rel="stylesheet" href="/css/layout.css">
+    <%- style %>
+</head>
+<body>
+    <!-- /* Partial */ -->
+    <%- include('_header'); %>
+    <!-- Variable Part -->
+    <!-- This line renders the value of the body variable. 
+        In the context of an Express application using EJS, 
+        body typically represents the content of the specific route being rendered.
+         It could be the HTML content of a specific page or the result of a partial rendering. -->
+    <%- body %>
+    <!-- Partial -->
+    <%- include('_footer'); %>
+    <%- script %>
+
+</body>
+</html>

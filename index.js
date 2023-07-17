@@ -11,10 +11,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 const path = require('path');
 const db = require('./config/mongoose');
-/**************requiring lib for authentication *****************/
-const session = require('express-session');
-const passport = require('passport');
-const LocalStrategy = require('./config/passport-local-strategy');
 // express-ejs-layouts is an Express middleware that allows you to use EJS layouts,
 // which are templates that define the common structure of your web pages.
 const expressLayouts = require('express-ejs-layouts');
@@ -25,6 +21,11 @@ app.use(cookieParser());
 app.use(express.urlencoded());
 // all views which are to be rendered belongs to a particular layout
 app.use(expressLayouts);
+
+/**************requiring lib for authentication *****************/
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('./config/passport-local-strategy');
 // Extract style and script from various pages and put into layout
 app.set('layout extractStyles' , true);
 app.set('layout extractScripts' , true);
@@ -47,10 +48,11 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(passport.setAuthenticatedUser);
 /* Use express routers */
 // This is middleware  for handling root request
 app.use('/' , require('./routes'));
-app.use('/users' , require('./routes'));
+
 app.listen(port , function(err)
 {
     if(err)

@@ -74,7 +74,7 @@ passport.checkAuthentication = function (req, res, next) {
     // passport put a method on  request isAuthenticated()
     if (req.isAuthenticated()) {
         // if user is signed in
-        return next;
+        return next();
     }
     // if user is not signed in
     return res.redirect('/users/signIn');
@@ -87,6 +87,7 @@ passport.setAuthenticatedUser = function (req, res, next) {
         // req.user contains current authnticated user from cookies and we are just sending it to locals
         res.locals.user = req.user;
     }
+    next();
 }
 // exports so that we can use it in other parts to our application
 module.exports = passport;

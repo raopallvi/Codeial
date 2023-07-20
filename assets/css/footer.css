@@ -1,0 +1,22 @@
+footer {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a4e6fc;
+  box-shadow: -10px 0px 4px 4px lightblue; }
+  footer ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50vw; }
+    footer ul li {
+      list-style: none; }
+      footer ul li a {
+        text-decoration: none; }
+        footer ul li a img {
+          height: 30px !important;
+          width: 30px !important;
+          border-radius: 20px; }

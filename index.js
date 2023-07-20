@@ -20,17 +20,19 @@ const LocalStrategy = require('./config/passport-local-strategy');
 // it is very bad practice so to improve it we use persistent storage to store all authenticated users.
 // so we user mongo store.
 const MongoStore = require('connect-mongo')(session);
-const sassMiddleware = require('node-sass-middleware');
+// const sassMiddleware = require('node-sass-middleware');
 // It creates an instance of express
 const app = express();
-app.use(sassMiddleware({
-    // from where scss files are taken and dest means css files 
-    src : '/assets/scss',
-    dest : '/assets/css',
-    debug : true,
-    outputStyle : 'extended',
-    prefix : '/css'
-}))
+
+// It will not work that i why we use node-sass instead of node-sass-middleware
+// app.use(sassMiddleware({
+//     // from where scss files are taken and dest means css files 
+//     src : './assets/scss',
+//     dest : './assets/css',
+//     debug : true,
+//     outputStyle : 'extended',
+//     prefix : '/css'
+// }))
 app.use(express.static('./assets'));
 app.use(cookieParser());
 app.use(express.urlencoded());

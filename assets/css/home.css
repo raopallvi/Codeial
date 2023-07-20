@@ -1,0 +1,13 @@
+#main-div {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #main-div h1 {
+    font-size: 50px;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: purple; }
+    #main-div h1 span {
+      color: purple; }

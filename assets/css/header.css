@@ -1,0 +1,26 @@
+header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: pink; }
+  header div {
+    width: 60vw; }
+    header div img {
+      margin-left: 25px;
+      height: 6vw;
+      width: 6vw;
+      border-radius: 50%; }
+  header ul {
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; }
+    header ul li {
+      list-style: none; }
+      header ul li a {
+        text-decoration: none;
+        font-size: 1.5rem; }

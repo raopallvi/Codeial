@@ -11,12 +11,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 50vw; }
+    width: 35vw; }
     footer ul li {
       list-style: none; }
       footer ul li a {
         text-decoration: none; }
         footer ul li a img {
-          height: 30px !important;
-          width: 30px !important;
+          height: 5vh !important;
+          width: 5vh !important;
           border-radius: 20px; }

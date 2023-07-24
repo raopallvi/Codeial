@@ -25,7 +25,7 @@ header {
     }
 
     ul {
-        width: 25vw;
+        width: 35vw;
         height: 15vh;
         display: flex;
         flex-direction: row;
@@ -64,13 +64,19 @@ header {
     }
     @media screen and (max-width: 1200px) {
         ul {
-            width : 35vw;
+            width : 45vw !important;
         }
     }
     @media screen and (max-width: 800px) {
         ul {
-            width : 45vw;
+            width : 55vw !important;
         }
     }
+    @media screen and (max-width: 600px) {
+        ul {
+            width : 90vw !important;
+        }
+    }
+
 
 }

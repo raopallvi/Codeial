@@ -17,7 +17,7 @@ header {
         height: 9vw;
         width: 9vw; } }
   header ul {
-    width: 25vw;
+    width: 35vw;
     height: 15vh;
     display: flex;
     flex-direction: row;
@@ -41,7 +41,10 @@ header {
           font-size: 4.8vw; } }
   @media screen and (max-width: 1200px) {
     header ul {
-      width: 35vw; } }
+      width: 45vw !important; } }
   @media screen and (max-width: 800px) {
     header ul {
-      width: 45vw; } }
+      width: 55vw !important; } }
+  @media screen and (max-width: 600px) {
+    header ul {
+      width: 90vw !important; } }

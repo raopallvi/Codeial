@@ -1,8 +1,28 @@
 <link rel="stylesheet" href="/css/userProfile.css">
-
-<h1>This is codeial / User Profile :  </h1>
-<h2>Name : <%= user.Name %></h2>
-<h2>Email : <%= user.Email %></h2>
-<h2>Password : <%= user.Password %></h2>
-
-   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="user-profile">
+    <div id="heading">
+        <h1>Hi , <%= user.Name %>
+        </h1>
+        <h2>Welcome To Our Website 😊</h2>
+        <hr>
+    </div>
+    <div id="details">
+        <h1>Your Profile</h1>
+        <div>
+            <i class="fa fa-user"></i><span>&nbsp;&nbsp;&nbsp;<%= user.Name %></span>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i></i><span>&nbsp;&nbsp;<%= user.Email %></span>
+        </div>
+        <div>
+            <i class="fa fa-lock"></i><span>&nbsp;&nbsp;<%= user.Password %></span>
+        </div>
+    </div>
+</div>

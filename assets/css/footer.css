@@ -17,6 +17,12 @@ footer {
       footer ul li a {
         text-decoration: none; }
         footer ul li a img {
+          margin-left: 10px;
           height: 5vh !important;
           width: 5vh !important;
           border-radius: 20px; }
+        @media screen and (max-width: 600px) {
+          footer ul li a img {
+            height: 3.5vh !important;
+            width: 3.5vh !important;
+            margin-left: 20px; } }

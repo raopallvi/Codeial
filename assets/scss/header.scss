@@ -15,10 +15,17 @@ header {
             width: 6vw;
             border-radius: 50%;
         }
+
+        @media screen and (max-width: 900px) {
+            img {
+                height: 9vw;
+                width: 9vw;
+            }
+        }
     }
 
     ul {
-        width: 30vw;
+        width: 25vw;
         height: 15vh;
         display: flex;
         flex-direction: row;
@@ -27,11 +34,42 @@ header {
 
         li {
             list-style: none;
+            margin-right: 5px;
 
             a {
                 text-decoration: none;
-                font-size: 1.5rem;
+                font-size: 2vw;
+                color: white;
             }
+
+
+            @media screen and (max-width: 1200px) {
+                a {
+                    font-size: 3.2vw;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                a {
+                    font-size: 4.2vw;
+                }
+            }
+
+            @media screen and (max-width: 400px) {
+                a {
+                    font-size: 4.8vw;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        ul {
+            width : 35vw;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        ul {
+            width : 45vw;
         }
     }
 

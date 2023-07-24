@@ -12,15 +12,36 @@ header {
       height: 6vw;
       width: 6vw;
       border-radius: 50%; }
+    @media screen and (max-width: 900px) {
+      header div img {
+        height: 9vw;
+        width: 9vw; } }
   header ul {
-    width: 30vw;
+    width: 25vw;
     height: 15vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly; }
     header ul li {
-      list-style: none; }
+      list-style: none;
+      margin-right: 5px; }
       header ul li a {
         text-decoration: none;
-        font-size: 1.5rem; }
+        font-size: 2vw;
+        color: white; }
+      @media screen and (max-width: 1200px) {
+        header ul li a {
+          font-size: 3.2vw; } }
+      @media screen and (max-width: 600px) {
+        header ul li a {
+          font-size: 4.2vw; } }
+      @media screen and (max-width: 400px) {
+        header ul li a {
+          font-size: 4.8vw; } }
+  @media screen and (max-width: 1200px) {
+    header ul {
+      width: 35vw; } }
+  @media screen and (max-width: 800px) {
+    header ul {
+      width: 45vw; } }

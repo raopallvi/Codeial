@@ -1,0 +1,48 @@
+#sign-in-div {
+    height: auto;
+    width: 35vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2.5px solid rgb(206, 204, 204);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    h1{
+        text-align: center;
+    }
+    #form {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        label
+        {
+            font-size: 2vh;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        input
+        {
+            height: 5vh;
+            font-size: 1.5vh;
+            width: 30vh;
+            border: 1px solid  lightgray;
+            border-radius: 5px;
+            background-color: none;
+            background: none;
+            outline: none;
+            margin-bottom: 20px;
+            padding-left: 4px;
+        }
+        #button{
+            border-radius: 20px;
+            height: 4.5vh;
+            width: 18vh;
+            font-size: 3vh;
+            background-color: rgb(108, 62, 119);
+            color: white;
+            margin-left: 74px;
+        }
+    }
+}

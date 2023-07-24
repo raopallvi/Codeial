@@ -1,6 +1,6 @@
 #sign-in-div {
     height: auto;
-    width: 35vh;
+    width: 60vh;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -10,7 +10,7 @@
     border-radius: 15px;
     background-color: whitesmoke;
     h1{
-        text-align: center;
+        margin-top: -4px;
     }
     #form {
         display: flex;
@@ -18,31 +18,32 @@
         flex-direction: column;
         label
         {
-            font-size: 2vh;
+            font-size: 3vh;
             font-weight: 500;
             margin-bottom: 10px;
         }
         input
         {
             height: 5vh;
-            font-size: 1.5vh;
-            width: 30vh;
+            font-size: 2vh;
+            width: 50vh;
             border: 1px solid  lightgray;
             border-radius: 5px;
             background-color: none;
             background: none;
             outline: none;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             padding-left: 4px;
         }
         #button{
             border-radius: 20px;
-            height: 4.5vh;
+            height: 5vh;
             width: 18vh;
-            font-size: 3vh;
+            font-size: 2.8vh;
             background-color: rgb(108, 62, 119);
             color: white;
-            margin-left: 74px;
+            margin-top: 5px;
+            margin-bottom: -4px;
         }
     }
 }

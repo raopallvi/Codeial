@@ -17,13 +17,14 @@ $clr2 : purple;
 }
 #feed-post
 {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: auto;
     border: 2px solid lightgrey;
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px;
     #new-post-form
     {
         display: flex;
@@ -38,10 +39,12 @@ $clr2 : purple;
     }
     #button{
         height: 5vh;
-        width: 10vh;
+        width: 14vh;
         font-size: 3vh;
-        background-color: purple;
+        background-color: rgb(161, 10, 161);
         color: white;
+        border:none;
+        border-radius: 20px;
     }
     background-color: rgb(172, 117, 150);
 }

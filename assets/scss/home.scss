@@ -1,5 +1,4 @@
 $clr2 : purple;
-
 #main-div {
     height: 80vh;
     width: 100vw;
@@ -15,4 +14,34 @@ $clr2 : purple;
             color: $clr2;
         }
     }
+}
+#feed-post
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: auto;
+    border: 2px solid lightgrey;
+    border-radius: 15px;
+    padding: 20px;
+    #new-post-form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    #content{
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 2vh;
+    }
+    #button{
+        height: 5vh;
+        width: 10vh;
+        font-size: 3vh;
+        background-color: purple;
+        color: white;
+    }
+    background-color: rgb(172, 117, 150);
 }

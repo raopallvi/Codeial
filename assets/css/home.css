@@ -11,3 +11,28 @@
     color: purple; }
     #main-div h1 span {
       color: purple; }
+
+#feed-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: auto;
+  border: 2px solid lightgrey;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #ac7596; }
+  #feed-post #new-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly; }
+  #feed-post #content {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 2vh; }
+  #feed-post #button {
+    height: 5vh;
+    width: 10vh;
+    font-size: 3vh;
+    background-color: purple;
+    color: white; }

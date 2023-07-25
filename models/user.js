@@ -18,7 +18,6 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-
 const user = mongoose.model('user' , userSchema);
 module.exports = user;
 // we have to store time stamp for created at and updated at

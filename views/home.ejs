@@ -4,10 +4,23 @@
         <h1>WELCOME TO OUR <span>WEBSITE</span></h1>
     </marquee>
 </div>
-<section id="feed-post">
+<div id="posts-div">
+<div id="feed-post">
     <h4>Add Post</h4>
-    <form action="/users/create-post" id="new-post-form" method="POST">
-        <textarea name="content" id="content" cols="40" rows="4" placeholder="Type here....."></textarea>
+    <form action="/posts/create" id="new-post-form" method="POST">
+        <textarea name="content" id="content" cols="40" rows="4" placeholder="Type here....." required></textarea>
         <input type="submit" value="Post" id="button">
     </form>
-</section>
+</div>
+<div id="posts-container">
+    <h1>Posts</h1>
+    <ul>
+    <% for(post of posts){ %>
+        <li>
+            <%=post.content%>
+            <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
+        </li>
+    <%}%>
+    </ul>
+</div>
+</div>

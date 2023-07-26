@@ -12,30 +12,60 @@
     #main-div h1 span {
       color: purple; }
 
-#feed-post {
-  margin-bottom: 20px;
+#posts-div {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: auto;
-  border: 2px solid lightgrey;
-  border-radius: 15px;
-  padding: 30px;
-  background-color: #ac7596; }
-  #feed-post #new-post-form {
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw !important; }
+  #posts-div #posts-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly; }
-  #feed-post #content {
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 2vh; }
-  #feed-post #button {
-    height: 5vh;
-    width: 14vh;
-    font-size: 3vh;
-    background-color: #a10aa1;
-    color: white;
-    border: none;
-    border-radius: 20px; }
+    justify-content: flex-start;
+    border: 2px solid lightgray;
+    background-color: #88cae4;
+    margin-right: 30px;
+    padding-left: 5px;
+    overflow-y: scroll;
+    height: 54vh;
+    width: 80vh;
+    color: #6e6c6c;
+    border-radius: 20px;
+    margin-bottom: 20px; }
+    #posts-div #posts-container h1 {
+      margin-left: 20px; }
+    #posts-div #posts-container ul li {
+      list-style-type: decimal;
+      margin-bottom: 2px;
+      font-size: 3vh;
+      font-weight: 400; }
+  #posts-div #posts-container::-webkit-scrollbar {
+    display: none; }
+  #posts-div #feed-post {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: auto;
+    border: 2px solid lightgrey;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #ac7596; }
+    #posts-div #feed-post #new-post-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly; }
+    #posts-div #feed-post #content {
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 2vh; }
+    #posts-div #feed-post #button {
+      height: 5vh;
+      width: 14vh;
+      font-size: 3vh;
+      background-color: #a10aa1;
+      color: white;
+      border: none;
+      border-radius: 20px; }

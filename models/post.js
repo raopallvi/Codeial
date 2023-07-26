@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
     content: {
-        type: string,
+        type: String,
         required: true
     },// Post is done by user so we have to attach or referenvce this post with user
     user: {
         type : mongoose.Schema.Types.ObjectId ,// always unique
-        ref : 'User'
+        ref : 'user' // User
     }
 },{
     timestamps:true

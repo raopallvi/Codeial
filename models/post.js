@@ -8,7 +8,12 @@ const postSchema = new mongoose.Schema({
     user: {
         type : mongoose.Schema.Types.ObjectId ,// always unique
         ref : 'user' // User
-    }
+    },
+    // include array of ids of all comments so that we dont need to traverse whole comment schema to collect all comments
+    comments :[{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'comment'
+    }]
 },{
     timestamps:true
     }

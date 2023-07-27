@@ -5,22 +5,55 @@
     </marquee>
 </div>
 <div id="posts-div">
-<div id="feed-post">
-    <h4>Add Post</h4>
-    <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" id="content" cols="40" rows="4" placeholder="Type here....." required></textarea>
-        <input type="submit" value="Post" id="button">
-    </form>
-</div>
-<div id="posts-container">
-    <h1>Posts</h1>
-    <ul>
-    <% for(post of posts){ %>
-        <li>
-            <%=post.content%>
-            <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
-        </li>
-    <%}%>
-    </ul>
-</div>
+    <!-- This form should be visible only if the user is signed in aur authenticated user and must be present in locals
+     Only this single check is not sufficient because anyone can make form by inspecting and make posts
+    So we need one check at route level-->
+    <% if(locals.user) { %>
+        <div id="feed-post">
+
+            <h4>Add Post</h4>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" id="content" cols="40" rows="4" placeholder="Type here....."
+                    required></textarea>
+                <input type="submit" value="Post" id="button">
+            </form>
+        </div>
+        <%}%>
+            <div id="posts-container">
+                <h1>Posts</h1>
+                <ul>
+                    <% for(post of posts){ %>
+                        <li>
+                            <p>
+                                <%=post.content%>
+                                    <br>
+                                    <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
+                            </p>
+                            <div class="post-comments">
+                                <% if(locals.user) {%>
+                                    <form action="/comments/create" method="POST">
+                                        <input type="text" placeholder="Type here comment.." name="content">
+                                        <input type="hidden" name="post" value="<%=post._id %>">
+                                        <input type="submit" value="Add Comment">
+                                    </form>
+                                    <%}%>
+                                        <div class="post-comments-list">
+                                            <h4>Comments</h4>
+                                            <ul id="post-comments-<%=post._id%>">
+                                                <%for(comment of post.comments){ %>
+                                                    <li style="list-style: none;">
+                                                        <p>
+                                                            <%=comment.content%>
+                                                                <br>
+                                                                <small>&nbsp;&nbsp;[<%=comment.user.Name%>]</small>
+                                                        </p>
+                                                    </li>
+                                                    <%}%>
+                                            </ul>
+                                        </div>
+                            </div>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
 </div>

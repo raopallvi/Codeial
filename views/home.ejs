@@ -1,4 +1,11 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="main-div">
     <marquee behavior="scroll" direction="left" scrollamount="20">
         <h1>WELCOME TO OUR <span>WEBSITE</span></h1>
@@ -15,18 +22,22 @@
             </form>
         </div>
         <%}%>
-    <!-- This form should be visible only if the user is signed in aur authenticated user and must be present in locals
+            <!-- This form should be visible only if the user is signed in aur authenticated user and must be present in locals
      Only this single check is not sufficient because anyone can make form by inspecting and make posts
     So we need one check at route level-->
-    <div id="posts-container">
+            <div id="posts-container">
                 <h1>Posts</h1>
                 <ul>
                     <% for(post of posts){ %>
                         <li>
                             <p>
+
                                 <%=post.content%>
-                                    <br>
-                                    <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
+                                    <% if(locals.user && locals.user.id == post.user.id) { %>
+                                        <a href="/posts/destroy/<%=post._id%>"><i class="fa fa-trash" style="margin-left: 20px;color: red; font-size: 20px;"></i></a>
+                                        <%}%>
+                                            <br>
+                                            <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
                             </p>
                             <div class="post-comments">
                                 <% if(locals.user) {%>
@@ -54,5 +65,5 @@
                         </li>
                         <%}%>
                 </ul>
-    </div>
+            </div>
 </div>

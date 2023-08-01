@@ -5,12 +5,8 @@
     </marquee>
 </div>
 <div id="posts-div">
-    <!-- This form should be visible only if the user is signed in aur authenticated user and must be present in locals
-     Only this single check is not sufficient because anyone can make form by inspecting and make posts
-    So we need one check at route level-->
     <% if(locals.user) { %>
         <div id="feed-post">
-
             <h4>Add Post</h4>
             <form action="/posts/create" id="new-post-form" method="POST">
                 <textarea name="content" id="content" cols="40" rows="4" placeholder="Type here....."
@@ -19,7 +15,10 @@
             </form>
         </div>
         <%}%>
-            <div id="posts-container">
+    <!-- This form should be visible only if the user is signed in aur authenticated user and must be present in locals
+     Only this single check is not sufficient because anyone can make form by inspecting and make posts
+    So we need one check at route level-->
+    <div id="posts-container">
                 <h1>Posts</h1>
                 <ul>
                     <% for(post of posts){ %>
@@ -55,5 +54,5 @@
                         </li>
                         <%}%>
                 </ul>
-            </div>
+    </div>
 </div>

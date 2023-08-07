@@ -1,5 +1,6 @@
 const post = require('../models/post');
 const user = require('../models/user');
+const comment = require('../models/comment');
 module.exports.home = function(req , res)
 {
     console.log(req.cookies);
@@ -25,10 +26,14 @@ module.exports.home = function(req , res)
     })
     .exec()
     .then(posts=>{
-        return res.render('home.ejs' , {
-            title : "Home",
-            posts : posts
-        });
+        user.find({}).then(users=>{
+            return res.render('home.ejs' , {
+                title : "Home",
+                posts : posts,
+                all_users : users
+            });
+        })
+        
     })
     .catch(err=>{
         console.log("Error in finding posts in post schema :" , err);

@@ -1,7 +1,16 @@
 const mongoose = require("mongoose");
 const User = require('../models/user');
 module.exports.profile = function (req, res) {
-    return res.render('userProfile');
+    User.findById(req.params.id)
+    .then(user=>{
+        return res.render('userProfile' , {
+            profile_user : user
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+        return;
+    })
 }
 
 module.exports.post = function (req, res) {

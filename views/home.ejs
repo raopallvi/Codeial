@@ -12,6 +12,14 @@
     </marquee>
 </div>
 <div id="posts-div">
+    <div id="friends">
+        <h4>Friends</h4>
+        <% for(u of all_users) { %>
+            <p>
+                <i class="fa fa-user" style="color: white;"></i><a href="/users/profile/<%=u.id%>"><%= u.Name%></a>
+            </p>
+        <%}%>
+    </div>
     <% if(locals.user) { %>
         <div id="feed-post">
             <h4>Add Post</h4>
@@ -29,41 +37,9 @@
                 <h1>Posts</h1>
                 <ul>
                     <% for(post of posts){ %>
-                        <li>
-                            <p>
-
-                                <%=post.content%>
-                                    <% if(locals.user && locals.user.id == post.user.id) { %>
-                                        <a href="/posts/destroy/<%=post._id%>"><i class="fa fa-trash" style="margin-left: 20px;color: red; font-size: 20px;"></i></a>
-                                        <%}%>
-                                            <br>
-                                            <small>&nbsp;&nbsp;[<%=post.user.Name%>]</small>
-                            </p>
-                            <div class="post-comments">
-                                <% if(locals.user) {%>
-                                    <form action="/comments/create" method="POST">
-                                        <input type="text" placeholder="Type here comment.." name="content">
-                                        <input type="hidden" name="post" value="<%=post._id %>">
-                                        <input type="submit" value="Add Comment">
-                                    </form>
-                                    <%}%>
-                                        <div class="post-comments-list">
-                                            <h4>Comments</h4>
-                                            <ul id="post-comments-<%=post._id%>">
-                                                <%for(comment of post.comments){ %>
-                                                    <li style="list-style: none;">
-                                                        <p>
-                                                            <%=comment.content%>
-                                                                <br>
-                                                                <small>&nbsp;&nbsp;[<%=comment.user.Name%>]</small>
-                                                        </p>
-                                                    </li>
-                                                    <%}%>
-                                            </ul>
-                                        </div>
-                            </div>
-                        </li>
-                        <%}%>
+                        <%- include('_post.ejs') %>
+                            <%}%>
                 </ul>
             </div>
+            
 </div>

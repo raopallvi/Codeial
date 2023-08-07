@@ -8,21 +8,39 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="user-profile">
     <div id="heading">
-        <h1>Hi , <%= user.Name %>
-        </h1>
-        <h2>Welcome To Our Website 😊</h2>
+        <h2>Hi , <%= profile_user.Name %>
+        </h2>
+        <h3>Welcome To Our Website 😊</h3>
         <hr>
     </div>
     <div id="details">
-        <h1>Your Profile</h1>
-        <div>
-            <i class="fa fa-user"></i><span>&nbsp;&nbsp;&nbsp;<%= user.Name %></span>
-        </div>
-        <div>
-            <i class="fa fa-envelope"></i></i><span>&nbsp;&nbsp;<%= user.Email %></span>
-        </div>
-        <div>
-            <i class="fa fa-lock"></i><span>&nbsp;&nbsp;<%= user.Password %></span>
-        </div>
+        <% if(locals.user.id==profile_user.id){ %>
+            <!-- if locals user and profile user are same in that case only we will show update profile form -->
+            <form action="/users/update/<%=profile_user.id%>" method="POST" id="update-form">
+                <div>
+                <label for="Name">Name :</label>
+                <input id="Name" ,name="Name" placeholder="Your Name" value="<%=profile_user.Name%>" required>
+                </div>
+                <div>
+                <label for="Email">Email&nbsp; :</label>
+                <input id="Email" name="Email" placeholder="abc@gmail.com" value="<%=profile_user.Email%>" required>
+                </div>
+                <div>
+                <input type="submit" id="button"> 
+                </div>
+            </form>
+            <% } else { %>
+                <!-- else show only profile info -->
+                <h1>Your Profile</h1>
+                <div>
+                    <i class="fa fa-user"></i><span>&nbsp;&nbsp;&nbsp;<%= profile_user.Name %></span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i></i><span>&nbsp;&nbsp;<%= profile_user.Email %></span>
+                </div>
+                <div>
+                    <i class="fa fa-lock"></i><span>&nbsp;&nbsp;<%= profile_user.Password %></span>
+                </div>
+                <% } %>
     </div>
 </div>

@@ -12,7 +12,7 @@
     </div>
     <ul>
         <% if(locals.user){ %>
-            <li><i class="fa fa-user" style="color: white;font-size: 30px;"></i><a href="/users/profile">
+            <li><i class="fa fa-user" style="color: white;font-size: 30px;"></i><a href="/users/profile/<%= locals.user.id%>">
                     <%=user.Name %>
                 </a></li>
             <li><a href="/users/signOut">Sign Out</a></li>

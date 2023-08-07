@@ -17,7 +17,6 @@ module.exports.create = function (req, res) {
 
 module.exports.destroy = function(req , res)
 {
-    console.log("id:" , req.params.id );
     
     Post.findById({_id : req.params.id})
     .then(post=>{

@@ -79,4 +79,20 @@ module.exports.destroySession = function(req, res) {
       res.redirect('/');
     });
   };
+
+module.exports.updateProfile = function(req , res){
+    if(req.user.id == req.params.id)
+    {
+        User.findByIdAndUpdate(req.params.id , req.body)
+        .then(()=>{
+            console.log(req.body);
+            return res.redirect('back');
+        })
+        .catch((err)=>{
+            console.log(err);
+            return req.status(401).send('Unautherised');
+        })
+    
+    }
+}
   

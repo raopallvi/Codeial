@@ -12,7 +12,6 @@ router.post('/create' , usersController.create);
 // use passport middleware for authentication
 // if authentication is done then createSession controller is called otherise failure redirect
 router.post('/create-session' ,passport.authenticate('local' , {failureRedirect : '/users/signIn'}  ) ,  usersController.createSession);
-
+router.post('/update/:id' , passport.checkAuthentication , usersController.updateProfile);
 router.get('/signOut' , usersController.destroySession);
 module.exports = router;
-

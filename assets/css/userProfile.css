@@ -24,13 +24,15 @@
       flex-direction: column;
       align-items: flex-start; }
       #user-profile #details #update-form div {
-        margin-bottom: 5px;
+        margin-bottom: 7px;
         font-size: 25px; }
         #user-profile #details #update-form div input {
+          margin-bottom: 7px;
           outline: none;
           border: none;
           background-color: none;
-          border-radius: 5px; }
+          border-radius: 5px;
+          width: auto; }
         #user-profile #details #update-form div label {
           margin-right: 50px; }
         #user-profile #details #update-form div #button {
@@ -41,4 +43,4 @@
 
 @media screen and (max-width: 800px) {
   #user-profile {
-    width: 50vh !important; } }
+    width: 60vh !important; } }
